@@ -1,3 +1,3 @@
 var request = require('request');
-const rootURL = 'https://api.flickr.com/services'
-var Flickr = require('flickr-sdk');
+
+// maps API usage from google documentation: key=API_KEY
