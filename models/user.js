@@ -12,7 +12,9 @@ var reviewSchema = new mongoose.Schema({
 
 var userSchema = new mongoose.Schema({
    userName: String,
+   email: String,
    googleId: String,
+   avatar: String,
    userRating: Number,
    secrets: [{ type: Schema.Types.ObjectId, ref: 'Secret' }],
    region: String,

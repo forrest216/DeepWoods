@@ -1,7 +1,6 @@
 var router = require('express').Router();
-var request = require('request');
 var passport = require('passport');
-var apiController = require('../controllers/api/apiController');
+
 
 /* GET home page. */
 router.get('/auth', passport.authenticate(
@@ -12,18 +11,20 @@ router.get('/auth', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/',
+    successRedirect : '/users',
     failureRedirect : '/'
   }
 ));
+
+router.get('/', (req, res, next) => {
+  res.render('index', {user: req.user});
+});
 
 router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');
 });
 
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+
 
 module.exports = router;

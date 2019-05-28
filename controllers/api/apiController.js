@@ -1,3 +1,14 @@
 var request = require('request');
 
-// maps API usage from google documentation: key=API_KEY
+module.exports = {
+   initMap
+};
+
+var map;
+function initMap(req, res) {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+}
+

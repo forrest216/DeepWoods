@@ -1,17 +1,13 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
 
     <div class="columns">
       
       <div class="column is-half">
         <div id="left-home-column">
-          <div class="text-area">
-            <h1 class="title" id="title-main">
-                DeepWoods is a Place of Secrets
-            </h1>
-            <p>Where foragers can trade their hard-won knowledge with other hunters. Make a secret, trade it for someone else's, 
-              and then get out to the woods!</p>
-          </div>
           <div id="map"></div>
+          <div class="text-area">
+            <p id="secret-instructions">Move the pin on the map to your secret location. Then fill out the fields below and save your secret to trade later.</p>
+          </div>
         </div>
       </div>
       <div class="column is-half">
@@ -44,4 +40,9 @@
       </div>
     </div>
 
-    <%- include('./partials/footer') %>
+<%- include('../partials/footer') %>
+
+<%  /* -- Mushroom foragers are well known for keeping their spots 
+              a secret - after all, one doesn't hike through the woods for days on end staring at duff 
+              only to spill their secrets to the first noob who asks where to find the choice boletes. 
+              Now you can expand your range while keeping your secret within the community. Happy hunting! -- */ %>

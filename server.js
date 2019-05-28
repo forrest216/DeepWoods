@@ -36,6 +36,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -59,6 +60,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-
-//Other packages: superagent , flickr-sdk , dotenv , request , mongoose ?

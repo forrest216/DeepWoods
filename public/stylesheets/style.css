@@ -1,10 +1,142 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: rgb(0, 39, 0);
-  color: saddlebrown;
+* {
+  font-family: 'Oxygen', sans-serif;
+  color: silver;
 }
 
-a {
-  color: #00B7FF;
+html {
+  background-color: black;
+  background-image: url('/images/forest-green-person.jpg');
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+p {
+  font-weight: 600;
+}
+
+.navbar {
+  margin: 1vw;
+  height: 80px;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, rgb(0, 41, 0),rgb(0, 41, 0, 0));
+}
+
+#goog {
+  padding: 2px;
+  border: 1px solid silver;
+}
+
+#left-home-column {
+  background: rgb(10, 10, 10, .7);
+  border-radius: 25px;
+  margin: 2vw;
+  padding: 2vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+}
+
+#right-home-column {
+  background: rgb(10, 10, 10, .7);
+  border-radius: 25px;
+  margin: 2vw;
+  padding: 2vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+}
+
+#text-area head{
+  color: silver;
+  background: rgb(10, 10, 10, .7);
+  margin: 2vw;
+  padding: 2vh;
+  text-align: center;
+  border-radius: 25px;
+  font-size: 1rem;
+}
+
+.title {
+  font-family: 'El Messiri', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgb(53, 120, 122);
+}
+
+#map {
+  margin: 2vw;
+  height: 60vh;
+  width: 40vw;
+}
+
+.button.is-primary {
+  background-color: transparent;
+  border-color: transparent;
+  color: inherit;
+}
+
+.button.is-primary:hover {
+  background: rgb(72, 85,53, .5);
+  border-color: transparent;
+  color: inherit;
+}
+
+.navbar-dropdown {
+  padding: 0;
+}
+
+a.navbar-item:hover, 
+.navbar-item.has-dropdown:hover .navbar-link,
+.navbar-link:hover,
+.navbar-dropdown:hover {
+  background-image: linear-gradient(to bottom, rgb(72, 85,53), rgb(0, 68,0, 0));
+  background-color: transparent;
+  color: silver;
+}
+
+.navbar-dropdown {
+  background: transparent;
+  background-image: linear-gradient(to top, rgba(72, 85, 53, .9), rgba(144, 170, 105, .1));
+  border: none;
+}
+.navbar-dropdown a.navbar-item {
+  background: transparent;
+}
+.navbar-dropdown a.navbar-item:hover {
+  font-size: large;
+  color: black;
+  background: rgba(144, 170, 105, 0.5);
+  font-weight: bold;
+}
+
+.navbar-item, .navbar-link {
+  color: silver;
+}
+
+.messages-container-main {
+  background: rgb(72, 85,53, .8);
+  overflow: auto;
+  color: silver;
+  margin: 3vw;
+  max-height: 75vh;
+  padding: 1vw;
+}
+
+.trade-block {
+  background: rgb(10, 10, 10, .6);
+}
+
+.navbar-item img {
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 769px) {
+#map {
+  width: 80vw;
+}
 }

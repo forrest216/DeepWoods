@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DeepWoods - Home</title>
+    <link href="https://fonts.googleapis.com/css?family=El+Messiri:600|Oxygen:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="javascripts/main.js"></script>
+  </head>
+  <body>
+   
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+    
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onclick="toggleBurger()">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/">
+              <img src="images/chanterelle-small.png" width="50" height="50">
+            Home
+          </a>
+          <% if(user) { %>
+          <a class="navbar-item" href="/users">
+               <img src="images/muscaria-icon-small.png" width="50" height="50">
+            My Neck of the Woods
+          </a>
+          <% } else { %>
+          <a class="navbar-item" href="/auth">
+               <img src="images/muscaria-icon-small.png" width="50" height="50">
+            Login
+          </a>
+          <% } %>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                  My Account
+              </a>
+              <a class="navbar-item">
+                  Exchange
+              </a>
+              <a class="navbar-item">
+                  References
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <% if(user) { %>
+              <a href="/logout" class="button is-primary"><strong>Log out</strong></a>
+              <% } else { %>
+              <a href="/auth" class="button is-primary">
+                <strong>Log in with <i class="fab fa-google" id="goog"></i>oogle</strong>
+              </a>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+    
