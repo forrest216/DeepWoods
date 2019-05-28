@@ -5,5 +5,7 @@ var usersController = require('../controllers/users');
 /* GET users listing. */
 router.get('/', usersController.index);
 
+router.post('/secrets', usersController.createSecret);
+
 module.exports = router;
 

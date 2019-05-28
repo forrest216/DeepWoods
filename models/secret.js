@@ -4,11 +4,11 @@ var secretSchema = new mongoose.Schema({
    recipient: String,
    creator: String,
    position: {lat: Number, lng: Number},
-   locale: String,
-   species: String,
-   Terrain: String,
-   Notes: String,
-   Status: {type: String, enum: ['fresh', 'traded', 'escrow']}
+   locale: {type: String, required: true},
+   species: {type: String, required: true},
+   terrain: {type: String, required: true},
+   notes: {type: String, required: true},
+   status: {type: String, enum: ['fresh', 'traded', 'escrow']}
 }, {
    timestamps: true
 });

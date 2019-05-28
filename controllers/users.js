@@ -15,7 +15,6 @@ function index(req, res, next) {
       Secret.find({ $or: [{ creator: req.user.googleId }, { recipient: req.user.googleId }] }, (err, secrets) => {
          if (err) return next(err);
          // render user page and pass in the user Object, all of their past trades and their secrets
-         console.log(`${req.user.userName} is logged in!`)
          res.render('users/users', {
             trades,
             secrets,
@@ -26,7 +25,11 @@ function index(req, res, next) {
 }
 
 function createSecret(req, res) {
-
+   var secret = new Secret(req.body);
+   secret.save((err) => {
+      if (err) return res.redirect('/users');
+      res.redirect('/users');
+   });
 }
 
 function createTrade(req, res) {

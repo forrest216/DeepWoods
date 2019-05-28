@@ -5,7 +5,7 @@
 
 html {
   background-color: black;
-  background-image: url('/images/forest-green-person.jpg');
+  background-image: url('/images/forest-dark-person.jpg');
   height: 100%;
   background-size: cover;
   background-attachment: fixed;
@@ -28,49 +28,57 @@ p {
 }
 
 #left-home-column {
-  background: rgb(10, 10, 10, .7);
-  border-radius: 25px;
   margin: 2vw;
   padding: 2vh;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 90vh;
+  /* height: 100vh; */
 }
 
 #right-home-column {
-  background: rgb(10, 10, 10, .7);
-  border-radius: 25px;
   margin: 2vw;
   padding: 2vh;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 90vh;
+  /* height: 100vh; */
 }
 
-#text-area head{
-  color: silver;
-  background: rgb(10, 10, 10, .7);
+#left-users-column {
   margin: 2vw;
   padding: 2vh;
   text-align: center;
-  border-radius: 25px;
-  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#right-users-column {
+  margin: 2vw;
+  padding: 2vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-area {
+  padding: 2vw 3vw;
 }
 
 .title {
-  font-family: 'El Messiri', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: rgb(53, 120, 122);
+  font-size: 2.35rem;
+  font-weight: 500;
+  color: silver;
+  font-family: 'Raleway', sans-serif;
 }
 
 #map {
   margin: 2vw;
-  height: 60vh;
+  height: 80vh;
   width: 40vw;
 }
 
@@ -108,22 +116,21 @@ a.navbar-item:hover,
   background: transparent;
 }
 .navbar-dropdown a.navbar-item:hover {
-  font-size: large;
-  color: black;
   background: rgba(144, 170, 105, 0.5);
   font-weight: bold;
+  color: snow;
 }
 
 .navbar-item, .navbar-link {
   color: silver;
 }
 
-.messages-container-main {
+.trades-container-main {
   background: rgb(72, 85,53, .8);
   overflow: auto;
   color: silver;
   margin: 3vw;
-  max-height: 75vh;
+  height: 100vh;
   padding: 1vw;
 }
 

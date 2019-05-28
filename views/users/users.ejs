@@ -1,25 +1,77 @@
 <%- include('../partials/header') %>
 
-    <div class="columns">
-      
-      <div class="column is-half">
-        <div id="left-home-column">
-          <div id="map"></div>
-          <div class="text-area">
-            <p id="secret-instructions">Move the pin on the map to your secret location. Then fill out the fields below and save your secret to trade later.</p>
-          </div>
-        </div>
+<div class="columns">
+
+  <div class="column is-half">
+    <div id="left-users-column">
+
+      <div id="map"></div>
+
+      <div class="text-area">
+        <p id="secret-instructions">Move the pin on the map to your secret location. Then fill out the fields below and save your secret to trade later.</p>
       </div>
-      <div class="column is-half">
-        <div id="right-home-column">
-        <div class="text-area head">
-          <h1 class="title">Secret Exchange</h1>
+
+      <form id="add-secret-form" action="/users/secrets" method="POST">
+
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input name="species" class="input" type="text" placeholder="Species">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control has-icons-left">
+                <input name="locale" class="input" type="text" placeholder="General location(very)" value="County/locale">
+                <span class="icon is-small is-left">
+                  <i class="far fa-compass"></i>
+                </span>
+              </div>
+            </div>
+          </div>    
         </div>
-        <div class="messages-container-main">
-          <div class="trade-block">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
+
+        <div class="field">
+          <label class="label">Terrain</label>
+            <input name="terrain" class="input" type="text" placeholder="Say something about the geography" value="Heavy brush">
+        </div>
+        
+        <div class="field">
+          <label class="label">Notes</label>
+          <div class="control">
+            <textarea name="notes" class="textarea" placeholder="What else should someone know about this spot?"></textarea>
           </div>
-          <br><br>
+        </div>
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="submit" class="button is-link">Submit</button>
+          </div>
+          <div class="control">
+            <button type="reset" class="button is-text">Cancel</button>
+          </div>
+        </div>
+        
+      </form>
+
+    </div>
+  </div>
+  <div class="column is-half">
+    <div id="right-users-column">
+    <div class="text-area head">
+      <h1 class="title">Secret Exchange</h1>
+    </div>
+    <div class="messages-container-main">
+      <div class="trade-block">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
+      </div>
+      <br><br>
+      <div class="trade-block">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
+        </div><br><br>
+        <div class="trade-block">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
+          </div><br><br>
           <div class="trade-block">
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
             </div><br><br>
@@ -28,17 +80,11 @@
               </div><br><br>
               <div class="trade-block">
                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-                </div><br><br>
-                <div class="trade-block">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-                  </div><br><br>
-                  <div class="trade-block">
-                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-                    </div>
-              </div>
-        </div>
-      </div>
+                </div>
+          </div>
     </div>
+  </div>
+</div>
 
 <%- include('../partials/footer') %>
 
