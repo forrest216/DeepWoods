@@ -1,8 +1,9 @@
-var burger = document.querySelectorAll('.navbar-menu');
-function toggleBurger() {
-   console.log(document.querySelectorAll('.navbar-menu'));
-   burger.classList.toggle('is-active');
-};
+
+// document.querySelectorAll('.navbar-menu').addEventListener('click', toggleBurger);
+// function toggleBurger() {
+//    console.log(document.querySelectorAll('.navbar-menu'));
+//    document.querySelectorAll('.navbar-menu').classList.toggle('is-active');
+// };
 
 
 
