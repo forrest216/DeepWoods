@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 var secretSchema = new mongoose.Schema({
    recipient: String,
    creator: String,
-   position: {lat: Number, lng: Number},
+   lat: Number, 
+   lng: Number,
    locale: {type: String, required: true},
    species: {type: String, required: true},
    terrain: {type: String, required: true},

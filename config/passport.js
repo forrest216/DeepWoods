@@ -10,7 +10,6 @@ passport.use(new GoogleStrategy({
 },
 function(accessToken, refreshToken, profile, cb) {
    // A user has logged in!
-   console.log(`OAuth login by ${profile.displayName}!`, profile);
    User.findOne({ 'googleId': profile.id }, (err, user) => {
       if (err) return cb(err);
       if (user) {

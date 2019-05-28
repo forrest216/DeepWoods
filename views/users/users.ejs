@@ -12,6 +12,10 @@
       </div>
 
       <form id="add-secret-form" action="/users/secrets" method="POST">
+        
+        <input id="lat-input" type="hidden" name="lat">
+        <input id="lng-input" type="hidden" name="lng">
+        <input type="hidden" name="creator" value="<%= user.googleId %>">
 
         <div class="field is-horizontal">
           <div class="field-body">
@@ -22,7 +26,7 @@
             </div>
             <div class="field">
               <div class="control has-icons-left">
-                <input name="locale" class="input" type="text" placeholder="General location(very)" value="County/locale">
+                <input name="locale" class="input" type="text" placeholder="General location(very)">
                 <span class="icon is-small is-left">
                   <i class="far fa-compass"></i>
                 </span>
@@ -32,14 +36,14 @@
         </div>
 
         <div class="field">
-          <label class="label">Terrain</label>
-            <input name="terrain" class="input" type="text" placeholder="Say something about the geography" value="Heavy brush">
+          <label class="label form-label">Terrain</label>
+            <input name="terrain" class="input" type="text" placeholder="Say something about the terrain">
         </div>
         
         <div class="field">
-          <label class="label">Notes</label>
+          <label class="label form-label">Notes</label>
           <div class="control">
-            <textarea name="notes" class="textarea" placeholder="What else should someone know about this spot?"></textarea>
+            <textarea name="notes" class="textarea" placeholder="What else should someone know about this spot? Be specific, this information will remain secret until you complete a trade."></textarea>
           </div>
         </div>
         
@@ -66,13 +70,25 @@
 
       <div class="messages-container-main">
         <input id="tab1" type="radio" name="tabs" checked>
-        <label for="tab1">Your Messages</label>
+        <label for="tab1">
+          <span class="icon is-small is-left">
+            <i class="far fa-comment-alt"></i>Your Messages
+          </span>
+        </label>
 
         <input id="tab2" type="radio" name="tabs">
-        <label for="tab2">Your Trades</label>
+        <label for="tab2">
+          <span class="icon is-small is-left">
+            <i class="fas fa-chart-line"></i>Your Trades
+          </span>
+        </label>
 
         <input id="tab3" type="radio" name="tabs">
-        <label for="tab3">Your Secrets</label>
+        <label for="tab3">
+          <span class="icon is-small is-left">
+            <i class="fas fa-map-marked-alt"></i>Your Secrets
+          </span>
+        </label>
 
         <section id="tab-content-1">
           <div class="trade-block">

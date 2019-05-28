@@ -34,7 +34,6 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 100vh; */
 }
 
 #right-home-column {
@@ -44,7 +43,6 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 100vh; */
 }
 
 #left-users-column {
@@ -125,8 +123,8 @@ a.navbar-item:hover,
   color: silver;
 }
 
-.trades-container-main {
-  background: rgb(72, 85,53, .8);
+.trade-container-main {
+  background: rgba(72, 85, 53, 0.685);
   overflow: auto;
   color: silver;
   margin: 3vw;
@@ -142,8 +140,74 @@ a.navbar-item:hover,
   margin-right: 8px;
 }
 
+.label.form-label {
+  margin: 0;
+  padding: 5px;
+}
+
 @media screen and (max-width: 769px) {
 #map {
   width: 80vw;
 }
+}
+
+/* -------- radio button tabs --------- */
+section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #abc;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #abc;
+  border: 1px solid transparent;
+}
+
+label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+label:hover {
+  color: #789;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #0af;
+  border: 1px solid #abc;
+  border-top: 2px solid #0af;
+  border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ #tab-content-1,
+#tab2:checked ~ #tab-content-2,
+#tab3:checked ~ #tab-content-3{
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  label {
+    font-size: 0;
+  }
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  label {
+    padding: 15px;
+  }
 }
