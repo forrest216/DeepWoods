@@ -1,5 +1,6 @@
 var router = require('express').Router();
 var passport = require('passport');
+var usersController = require('../controllers/users');
 
 
 /* GET home page. */
@@ -16,9 +17,7 @@ router.get('/oauth2callback', passport.authenticate(
   }
 ));
 
-router.get('/', (req, res, next) => {
-  res.render('index', {user: req.user});
-});
+router.get('/', usersController.index);
 
 router.get('/logout', (req, res) => {
   req.logout();

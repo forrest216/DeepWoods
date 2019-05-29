@@ -4,11 +4,22 @@ const User = require('../models/user');
 
 module.exports = {
    index,
-   createSecret,
+   user,
    createTrade,
 }
 
 function index(req, res, next) {
+   // get all trades involving the user
+   Trade.find({}, (err, trades) => {
+      if (err) return next(err);
+         res.render('index', {
+            trades,
+            user: req.user
+         });
+   });
+}
+
+function user(req, res, next) {
    // get all trades involving the user
    Trade.find({ users: { $in: [req.user._id] } }, (err, trades) => {
       if (err) return next(err);
@@ -22,22 +33,6 @@ function index(req, res, next) {
             user: req.user
          });
       })
-   });
-}
-
-function createSecret(req, res) {
-   var secret = new Secret(req.body);
-   console.log(req.user);
-   User.findById(req.user._id, (err, user) => {
-      user.secrets.push(secret._id);
-      user.save((err) => {
-         secret.save((err) => {
-            if (err) return res.redirect('/users');
-            res.redirect('/users');
-         });
-
-      });
-      
    });
 }
 

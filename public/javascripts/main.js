@@ -1,4 +1,5 @@
 
+
 var map;
 var userLocale = { lat: 37.7749, lng: -122.431297 };
 
@@ -19,11 +20,11 @@ function initMap(req, res) {
    function placeMarker(location) {
       var latInput = document.querySelector('#lat-input');
       var lngInput = document.querySelector('#lng-input');
-      latInput.value = location.lat();
-      lngInput.value = location.lng();
+      if (latInput) latInput.value = location.lat();
+      if (lngInput) lngInput.value = location.lng();
 
-      console.log(latInput.value);
-      console.log(lngInput.value);
+      if (latInput) console.log(latInput.value);
+      if (lngInput) console.log(lngInput.value);
 
       marker.setPosition(location);
       map.panTo(location);

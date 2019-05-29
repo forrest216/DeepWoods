@@ -123,7 +123,7 @@ a.navbar-item:hover,
   color: silver;
 }
 
-.trade-container-main {
+.trade-container-main, .radio-tab-container{
   background: rgba(72, 85, 53, 0.685);
   overflow: auto;
   color: silver;
@@ -132,8 +132,22 @@ a.navbar-item:hover,
   padding: 1vw;
 }
 
-.trade-block {
+.trade-block{
   background: rgb(10, 10, 10, .6);
+}
+
+.secret-static-map {
+  margin-top: 15px;
+}
+
+.secret-display-block {
+  background: rgb(10, 10, 10, .6);
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+.button.modal-button {
+background: transparent;
+color: silver;
 }
 
 .navbar-item img {
@@ -141,9 +155,15 @@ a.navbar-item:hover,
 }
 
 .label.form-label {
+  color: silver;
   margin: 0;
   padding: 5px;
 }
+
+.modal section {
+  display: block;
+}
+
 
 @media screen and (max-width: 769px) {
 #map {
@@ -152,10 +172,15 @@ a.navbar-item:hover,
 }
 
 /* -------- radio button tabs --------- */
+
+
+.radio-tab {
+  padding: 1vw 6vw;
+}
+
 section {
   display: none;
   padding: 20px 0 0;
-  border-top: 1px solid #abc;
 }
 
 input {
@@ -172,6 +197,10 @@ label {
   border: 1px solid transparent;
 }
 
+.svg-inline--fa {
+  margin-right: 1vw;
+}
+
 label:before {
   font-family: fontawesome;
   font-weight: normal;
@@ -184,10 +213,7 @@ label:hover {
 }
 
 input:checked + label {
-  color: #0af;
   border: 1px solid #abc;
-  border-top: 2px solid #0af;
-  border-bottom: 1px solid #fff;
 }
 
 #tab1:checked ~ #tab-content-1,
@@ -197,9 +223,10 @@ input:checked + label {
 }
 
 @media screen and (max-width: 800px) {
-  label {
-    font-size: 0;
+  .radio-tab {
+    padding: 2vw 10vw;
   }
+
   label:before {
     margin: 0;
     font-size: 18px;
@@ -211,3 +238,4 @@ input:checked + label {
     padding: 15px;
   }
 }
+

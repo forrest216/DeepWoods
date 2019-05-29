@@ -11,10 +11,11 @@
         <p id="secret-instructions">Move the pin on the map to your secret location. Then fill out the fields below and save your secret to trade later.</p>
       </div>
 
-      <form id="add-secret-form" action="/users/secrets" method="POST">
+      <form id="add-secret-form" action="/secrets" method="POST">
         
         <input id="lat-input" type="hidden" name="lat">
         <input id="lng-input" type="hidden" name="lng">
+        <input type="hidden" name="status" value="fresh">
         <input type="hidden" name="creator" value="<%= user.googleId %>">
 
         <div class="field is-horizontal">
@@ -64,54 +65,143 @@
   <div class="column is-half">
     <div id="right-users-column">
 
-      <div class="text-area head">
-        <h1 class="title">Secret Exchange</h1>
-      </div>
-
       <div class="messages-container-main">
-        <input id="tab1" type="radio" name="tabs" checked>
-        <label for="tab1">
+
+        <input  id="tab1" type="radio" name="tabs" checked>
+        <label class="radio-tab" for="tab1">
           <span class="icon is-small is-left">
-            <i class="far fa-comment-alt"></i>Your Messages
+            <i class="fas fa-map-marked-alt"></i>Your Secrets
           </span>
         </label>
-
-        <input id="tab2" type="radio" name="tabs">
-        <label for="tab2">
+          
+        <input  id="tab2" type="radio" name="tabs">
+        <label class="radio-tab" for="tab2">
           <span class="icon is-small is-left">
             <i class="fas fa-chart-line"></i>Your Trades
           </span>
         </label>
 
-        <input id="tab3" type="radio" name="tabs">
-        <label for="tab3">
+        <input  id="tab3" type="radio" name="tabs">
+        <label class="radio-tab" for="tab3">
           <span class="icon is-small is-left">
-            <i class="fas fa-map-marked-alt"></i>Your Secrets
+            <i class="far fa-comment-alt"></i>Your Messages
           </span>
         </label>
 
-        <section id="tab-content-1">
-          <div class="trade-block">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-          </div>
-          <br><br>
-          <div class="trade-block">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-          </div><br><br>
-          <div class="trade-block">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-          </div><br><br>
-          <div class="trade-block">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-          </div><br><br>
-          <div class="trade-block">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-          </div><br><br>
-          <div class="trade-block">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-          </div>
-        </section>
 
+        <section id="tab-content-1" class="radio-tab-container">
+            <% if(secrets.length) { %>
+            <% secrets.forEach((secret) => { %>
+            <div class="secret-display-block">
+              <img class="secret-static-map"  src="https://maps.googleapis.com/maps/api/staticmap?center=<%= secret.lat %>,<%= secret.lng %>&zoom=9&scale=2&size=200x200&maptype=hybrid&key=<%= process.env.MAPS_API %>&markers=size:small%7C<%= secret.lat %>,<%= secret.lng %>" alt="secret <%= secret.species %> location">
+              <div class="secret-detail-container">
+                <p class="users-secret-detail">Species: <%= secret.species %></p>
+                <p class="users-secret-detail">Latitude: <%= secret.lat %> Longitude: <%= secret.lng %></p>
+                <p class="users-secret-detail">Area: <%= secret.locale %></p>
+                <p class="users-secret-detail">Terrain: <%= secret.terrain %></p>
+                <p class="users-secret-detail">Notes: <%= secret.notes %></p>
+              </div>
+              <button class="button modal-button" id="modal<%= secret._id %>">Edit</button>
+            </div>
+            <% /*--------------------- 'Edit' modal for each secret ----------------------------*/ %>
+            <div class="modal modal<%= secret._id %>">
+              <div class="modal-background"></div>
+              <div class="modal-card">
+                <header class="modal-card-head">
+                  <p class="modal-card-title">Edit Your Secret</p>
+                  <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                  <div class="secret-display-block">
+                    <img class="secret-static-map"  src="https://maps.googleapis.com/maps/api/staticmap?center=<%= secret.lat %>,<%= secret.lng %>&zoom=9&scale=2&size=200x200&maptype=hybrid&key=<%= process.env.MAPS_API %>&markers=size:small%7C<%= secret.lat %>,<%= secret.lng %>" alt="secret <%= secret.species %> location">
+                    <div class="secret-detail-container">
+                      <p class="users-secret-detail">Species: <%= secret.species %></p>
+                      <p class="users-secret-detail">Latitude: <%= secret.lat %> Longitude: <%= secret.lng %></p>
+                      <p class="users-secret-detail">Area: <%= secret.locale %></p>
+                      <p class="users-secret-detail">Terrain: <%= secret.terrain %></p>
+                      <p class="users-secret-detail">Notes: <%= secret.notes %></p>
+                    </div>
+                  </div>
+  
+                  <form id="edit-secret-form" action="/secrets/<%= secret._id %>" method="PUT">
+        
+                      <div class="field is-horizontal">
+                        <div class="field-body">
+                          <div class="field">
+                            <div class="control">
+                              <label class="label form-label">Edit Species Info</label>
+                              <input name="species" class="input" type="text" placeholder="Species" value="<%= secret.species %>">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="control has-icons-left">
+                                <label class="label form-label">Edit Region Specificity</label>
+                              <input name="locale" class="input" type="text" placeholder="General location(very)" value="<%= secret.locale %>">
+                              <span class="icon is-small is-left">
+                                <i class="far fa-compass"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>    
+                      </div>
+              
+                      <div class="field">
+                        <label class="label form-label">Edit Terrain</label>
+                          <input name="terrain" class="input" type="text" 
+                          placeholder="Say something about the terrain" value="<%= secret.terrain %>">
+                      </div>
+                      
+                      <div class="field">
+                        <label class="label form-label">Edit Notes</label>
+                        <div class="control">
+                          <textarea name="notes" class="textarea" placeholder="What else should someone know about this spot? Be specific, this information will remain secret until you complete a trade." value="<%= secret.notes %>"></textarea>
+                        </div>
+                      </div>
+                      
+                    </section>
+                    <footer class="modal-card-foot">
+                      <button type="submit" class="button is-success edit-submit">Save changes</button>
+                  </form>
+                    <button class="button cancel" formtarget="_blank">Cancel</button>
+                    <form action="/secrets/<%= secret._id %>?_method=DELETE" method="POST">
+                      <button type="button" class="button is-danger is-right">Delete</button>
+                    </form>
+                  </footer>
+              </div>
+            </div>
+
+            <% });} else { %>
+              <div class="secret-display-block">
+                <p> Your secret spots will appear here, but you have to add at least one first!</p>
+  
+              </div>
+            <% }; %>
+          </section>
+        
+        <section id="tab-content-2" class="radio-tab-container">
+          <% if(trades.length) { %>
+            <% trades.forEach((trade) => { %>
+              <div class="trade-block">
+                <p class="trade-detail">Region: <%= trade.region %></p>
+                <p class="trade-detail">Trade details: <%= trade.content %></p>
+              </div>
+              <% }); } else { %>
+                <div class="secret-display-block">
+                  <p> Your trades will appear here, but you have to add at least one first!</p>
+                </div>
+                  <% }; %>
+        </section>
+        
+        <section id="tab-content-3" class="radio-tab-container">
+            <% if(trades.length) { %>
+              <% trades.forEach((trade) => { %>
+                <% }); } else { %>
+                  <div class="secret-display-block">
+                    <p> Your messages will appear here when another forager wants to talk about a trade</p>
+                  </div>
+                    <% }; %>
+          </section>
+      
       </div>
 
     </div>
@@ -120,6 +210,8 @@
 </div>
 
 <%- include('../partials/footer') %>
+
+
 
 <%  /* -- Mushroom foragers are well known for keeping their spots 
               a secret - after all, one doesn't hike through the woods for days on end staring at duff 

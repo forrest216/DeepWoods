@@ -21,26 +21,19 @@
         </div>
 
           <div class="trade-container-main">
-              <div class="trade-block">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-              </div>
-              <br><br>
-              <div class="trade-block">
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-                </div><br><br>
-                <div class="trade-block">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-                  </div><br><br>
+              <% if(trades.length) { %>
+                <% trades.forEach((trade) => { %>
                   <div class="trade-block">
-                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-                    </div><br><br>
+                    <p class="trade-detail">Region: <%= trade.region %></p>
+                    <p class="trade-detail">Trade details: <%= trade.content %></p>
+                  </div>
+                  <% }); } else { %>
                     <div class="trade-block">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-                      </div><br><br>
-                      <div class="trade-block">
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium consectetur quis praesentium dolore, explicabo animi temporibus minima ullam numquam itaque iure accusantium possimus, fugiat dignissimos nulla doloribus vel placeat!</p>
-                        </div>
-                  
+                      <p> Trades will appear here when somebody posts one. Happy hunting!</p>
+                    </div>
+                    <br><br>
+                      <% }; %>
+              
           </div>
 
         </div>
