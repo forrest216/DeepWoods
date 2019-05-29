@@ -4,12 +4,13 @@ const User = require('../models/user');
 
 module.exports = {
    createSecret,
+   updateSecret,
    deleteSecret,
+   
 }
 
 function createSecret(req, res) {
    var secret = new Secret(req.body);
-   console.log(req.user);
    User.findById(req.user._id, (err, user) => {
       user.secrets.push(secret._id);
       user.save((err) => {
@@ -23,6 +24,10 @@ function createSecret(req, res) {
    });
 }
 
-function deleteSecret(req, res) {
+function updateSecret(req, res) {
    
+}
+
+function deleteSecret(req, res) {
+
 }
