@@ -1,3 +1,5 @@
+/* --------------------This document must be deferred for event handlers to attach to dynamic elements------------------ */
+
 // ----------------- Burger toggle -------------------
 var burger = document.querySelector('.navbar-burger');
 var navItems = document.querySelectorAll('.navbar-item');
@@ -19,17 +21,21 @@ var modalSubmit = document.querySelectorAll('.button.edit-submit');
 
 var id;
 
-if (modalBtn.length) modalBtn.forEach((button) => {button.addEventListener('click', toggleModal)
+if (modalBtn.length) modalBtn.forEach((button) => {
+   button.addEventListener('click', toggleModal)
 });
-if (modalCloseBtn.length) modalCloseBtn.forEach((button) => {button.addEventListener('click', toggleModal)
+if (modalCloseBtn.length) modalCloseBtn.forEach((button) => {
+   button.addEventListener('click', toggleModal)
 });
-if (modalCancel.length) modalCancel.forEach((button) => {button.addEventListener('click', toggleModal)
+if (modalCancel.length) modalCancel.forEach((button) => {
+   button.addEventListener('click', toggleModal)
 });
-if (modalSubmit.length) modalSubmit.forEach((button) => {button.addEventListener('click', toggleModal)
+if (modalSubmit.length) modalSubmit.forEach((button) => {
+   button.addEventListener('click', toggleModal)
 });
 
 function toggleModal(evt) {
-   if (evt.target.id) {id = evt.target.id};
+   if (evt.target.id) { id = evt.target.id };
    document.querySelector(`.${id}`).classList.toggle('is-active');
 }
 
