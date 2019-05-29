@@ -25,9 +25,18 @@ function createSecret(req, res) {
 }
 
 function updateSecret(req, res) {
-   
+   console.log(req.body, req.params.id);
+   Secret.update({_id: req.params.id}, req.body, (err, updatedSecret) => {
+      if (err) console.log(err);
+      res.redirect('/users');
+   });
 }
 
 function deleteSecret(req, res) {
+   console.log(req.body, req.params.id);
+   Secret.findOneAndDelete({_id: req.params.id}).exec((err, deletedSecret) => {
+      if (err) console.log(err);
+      res.redirect('/users');
 
+   });
 }

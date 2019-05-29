@@ -12,7 +12,12 @@ var tradeSchema = new mongoose.Schema({
    content: String,
    region: String,
    messages: [messageSchema],
-   users: [{type: Schema.Types.ObjectId, ref: 'User'}]
+   createdBy: {type: Schema.Types.ObjectId, ref: 'User'},
+   tradedTo: {type: Schema.Types.ObjectId, ref: 'User'},
+   status: {
+      type: String,
+      enum: ['Active', 'Pending', 'Traded']
+   }
 }, {
    timestamps: true
 });
