@@ -15,7 +15,7 @@ function toggleBurger() {
 
 // ----------- Secret Modal Toggle -----------------
 var modalBtn = document.querySelectorAll('.edit-button');
-var modalCloseBtn = document.querySelectorAll('.delete');
+var modalCloseBtn = document.querySelectorAll('.delete.delete-edit');
 var modalCancel = document.querySelectorAll('.button.cancel');
 
 var id;
@@ -38,9 +38,8 @@ function toggleModal(evt) {
 
 // ----------- Trade Modal Toggle -----------------
 var tradeModalBtn = document.querySelectorAll('.trade-button');
-var tradeModalCloseBtn = document.querySelectorAll('.delete-trade');
+var tradeModalCloseBtn = document.querySelectorAll('.delete.delete-trade');
 var tradeModalCancel = document.querySelectorAll('.trade-cancel');
-// var tradeModalSubmit = document.querySelectorAll('.button.edit-submit');
 
 if (tradeModalBtn.length) tradeModalBtn.forEach((button) => {
    button.addEventListener('click', toggleTradeModal)
@@ -51,9 +50,6 @@ if (tradeModalCloseBtn.length) tradeModalCloseBtn.forEach((button) => {
 if (tradeModalCancel.length) tradeModalCancel.forEach((button) => {
    button.addEventListener('click', toggleTradeModal)
 });
-// if (tradeModalSubmit.length) tradeModalSubmit.forEach((button) => {
-//    button.addEventListener('click', toggleTradeModal)
-// });
 
 function toggleTradeModal(evt) {
    if (evt.target.id) { id = evt.target.id };

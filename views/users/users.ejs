@@ -50,7 +50,7 @@
               <div class="modal-card">
                 <header class="modal-card-head">
                   <p class="modal-card-title">Edit Your Secret</p>
-                  <button class="delete" aria-label="close"></button>
+                  <button class="delete delete-edit" aria-label="close"></button>
                 </header>
                 <section class="modal-card-body">
                   <div class="secret-display-block">
@@ -92,9 +92,7 @@
                       <div class="field">
                         <label class="label form-label">Edit Notes</label>
                         <div class="control">
-                          <textarea name="notes" class="textarea" placeholder="What else should someone know about this spot? Be specific, this information will remain secret until you complete a trade.">
-                            <%= secret.notes %>
-                          </textarea>
+                          <textarea name="notes" class="textarea" placeholder="What else should someone know about this spot? Be specific, this information will remain secret until you complete a trade."><%= secret.notes %></textarea>
                         </div>
                       </div>
                       
@@ -116,7 +114,7 @@
               <div class="modal-card">
                 <header class="modal-card-head">
                   <p class="modal-card-title">Post Your Secret for Trade</p>
-                  <button class="delete-trade" aria-label="close"></button>
+                  <button class="delete delete-trade" aria-label="close"></button>
                 </header>
                 <section class="modal-card-body">
                   <div class="secret-display-block">
@@ -154,8 +152,7 @@
                     <div class="field">
                       <label class="label form-label">Say something about your trade here. remember, not too specific!</label>
                       <div class="control">
-                        <textarea name="content" class="textarea" placeholder="What do you want your post to say?">
-                        </textarea>
+                        <textarea name="content" class="textarea" placeholder="What do you want your post to say?"></textarea>
                       </div>
                     </div>
                     

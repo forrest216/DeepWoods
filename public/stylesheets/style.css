@@ -136,6 +136,7 @@ a.navbar-item:hover,
 }
 
 .trade-block{
+  margin-bottom: 1.5vw;
   background: rgb(10, 10, 10, .6);
 }
 
