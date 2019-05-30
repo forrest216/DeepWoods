@@ -14,3 +14,11 @@ function createTrade(req, res) {
       res.redirect('/users');
    });
 }
+
+function updateTrade(req, res) {
+
+}
+
+function deleteTrade(req, res) {
+
+}
