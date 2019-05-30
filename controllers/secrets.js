@@ -37,6 +37,5 @@ function deleteSecret(req, res) {
    Secret.findOneAndDelete({_id: req.params.id}).exec((err, deletedSecret) => {
       if (err) console.log(err);
       res.redirect('/users');
-
    });
 }
