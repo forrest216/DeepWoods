@@ -97,10 +97,11 @@ p {
 }
 
 a.navbar-item:hover, 
+.is-hoverable:hover,
 .navbar-item.has-dropdown:hover .navbar-link,
 .navbar-link:hover {
-  background-image: linear-gradient(to bottom, rgb(72, 85,53), rgb(0, 68,0, 0));
   background-color: transparent;
+  background-image: linear-gradient(to bottom, rgb(72, 85,53), rgb(0, 68,0, 0));
   color: silver;
 }
 
@@ -120,6 +121,7 @@ a.navbar-item:hover,
 }
 
 .navbar-item, .navbar-link {
+  background-color: transparent;
   color: silver;
 }
 
@@ -127,8 +129,8 @@ a.navbar-item:hover,
   background: rgba(72, 85, 53, 0.685);
   overflow: auto;
   color: silver;
-  margin: 3vw;
-  height: 100vh;
+  margin: 2vw;
+  height: 120vh;
   padding: 1vw;
 }
 
@@ -142,8 +144,8 @@ a.navbar-item:hover,
 
 .secret-display-block {
   background: rgb(10, 10, 10, .6);
-  margin-top: 30px;
-  padding-bottom: 20px;
+  margin: 1vw;
+  padding: 1vw;
 }
 .button.modal-button {
 background: transparent;
@@ -169,6 +171,10 @@ color: silver;
   #map {
     width: 80vw;
   }
+
+  .radio-tab-container {
+    min-width: 80vw;
+  }
 }
 
 @media only screen and (max-width: 1087px) {
@@ -185,9 +191,13 @@ color: silver;
     background: none;
   }
 
+  a img {
+    display: none;
+  }
+
   #navbarBasicExample {
     padding: 0;
-    width: 25vw;
+    width: 30vw;
     margin-left: auto;
     background: transparent;
     background-image: linear-gradient(to top, rgba(72, 85, 53, 1), rgba(144, 170, 105, .15));
