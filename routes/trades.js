@@ -4,6 +4,8 @@ var tradesController = require('../controllers/trades');
 
 
 
-// router.post('/', secretsController.createSecret);
+router.post('/', tradesController.createTrade);
+// router.put('/', tradesController.updateTrade);
+// router.delete('/', tradesController.deleteTrade);
 
 module.exports = router;

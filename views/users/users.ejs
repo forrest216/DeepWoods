@@ -41,8 +41,8 @@
                 <p class="users-secret-detail">Notes: <%= secret.notes %></p>
               </div>
               <a class="button is-light maps-link has-text-link" href="https://www.google.com/maps/search/?api=1&query=<%= secret.lat %>,<%= secret.lng %>" target="_blank">View in Google Maps</a>
-              <button class="button trade-button">Trade</button>
-              <button class="button modal-button" id="modal<%= secret._id %>">Edit</button>
+              <button class="button trade-button" id="trade-modal<%= secret._id %>">Trade</button>
+              <button class="button edit-button" id="modal<%= secret._id %>">Edit</button>
             </div>
             <% /*--------------------- 'Edit' modal for each secret ----------------------------*/ %>
             <div class="modal modal<%= secret._id %>">
@@ -130,6 +130,10 @@
                   
                   <form id="create-trade-form" action="/trades" method="POST">
                     
+                    <input type="hidden" name="secret" value="<%= secret._id %>">
+                    <input type="hidden" name="createdBy" value="<%= user._id %>">
+                    <input type="hidden" name="status" value="Active">
+                    
                     <div class="field is-horizontal">
                       <div class="field-body">
                         <div class="field">
@@ -160,31 +164,31 @@
                 </section>
                 <footer class="modal-card-foot">
                   <button class="button trade-cancel" >Cancel</button>
-                  <% /*----------^^^^^^^^^^^^^^^^^^^^^ Editing this section ^^^^^^^^^^^^^^^^^^^^^------------*/ %>
                 </footer>
               </div>
             </div>
-
+            
             <% });} else { %>
               <div class="secret-display-block">
                 <p> Your secret spots will appear here, but you have to add at least one first!</p>
               </div>
-            <% }; %>
-          </section>
-        
-        <section id="tab-content-2" class="radio-tab-container">
-          <% if(trades.length) { %>
-            <% trades.forEach((trade) => { %>
-              <div class="trade-block">
-                <p class="trade-detail">Region: <%= trade.region %></p>
-                <p class="trade-detail">Trade details: <%= trade.content %></p>
-              </div>
-              <% }); } else { %>
-                <div class="secret-display-block">
-                  <p> Your trades will appear here, but you have to add at least one first!</p>
-                </div>
-                  <% }; %>
-        </section>
+              <% }; %>
+            </section>
+            
+            <section id="tab-content-2" class="radio-tab-container">
+              <% if(trades.length) { %>
+                <% trades.forEach((trade) => { %>
+                  <div class="trade-block">
+                    <p class="trade-detail">Region: <%= trade.region %></p>
+                    <p class="trade-detail">Trade details: <%= trade.content %></p>
+                  </div>
+                  <% }); } else { %>
+                    <div class="secret-display-block">
+                      <p> Your trades will appear here, but you have to add at least one first!</p>
+                    </div>
+                    <% }; %>
+                  </section>
+                  <% /*----------^^^^^^^^^^^^^^^^^^^^^ Editing this section ^^^^^^^^^^^^^^^^^^^^^------------*/ %>
         
         <section id="tab-content-3" class="radio-tab-container">
             <% if(trades.length) { %>

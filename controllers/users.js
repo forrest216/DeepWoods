@@ -5,7 +5,6 @@ const User = require('../models/user');
 module.exports = {
    index,
    user,
-   createTrade,
 }
 
 function index(req, res, next) {
@@ -21,7 +20,7 @@ function index(req, res, next) {
 
 function user(req, res, next) {
    // get all trades involving the user
-   Trade.find({ users: { $in: [req.user._id] } }, (err, trades) => {
+   Trade.find({ createdBy: req.user._id }, (err, trades) => {
       if (err) return next(err);
       // get all secrets involving the user
       Secret.find({ $or: [{ creator: req.user.googleId }, { recipient: req.user.googleId }] }, (err, secrets) => {
@@ -35,9 +34,3 @@ function user(req, res, next) {
       })
    });
 }
-
-function createTrade(req, res) {
-
-}
-
-

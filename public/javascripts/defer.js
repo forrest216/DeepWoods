@@ -14,10 +14,9 @@ function toggleBurger() {
 };
 
 // ----------- Secret Modal Toggle -----------------
-var modalBtn = document.querySelectorAll('.modal-button');
+var modalBtn = document.querySelectorAll('.edit-button');
 var modalCloseBtn = document.querySelectorAll('.delete');
 var modalCancel = document.querySelectorAll('.button.cancel');
-var modalSubmit = document.querySelectorAll('.button.edit-submit');
 
 var id;
 
@@ -30,37 +29,33 @@ if (modalCloseBtn.length) modalCloseBtn.forEach((button) => {
 if (modalCancel.length) modalCancel.forEach((button) => {
    button.addEventListener('click', toggleModal)
 });
-if (modalSubmit.length) modalSubmit.forEach((button) => {
-   button.addEventListener('click', toggleModal)
-});
 
 function toggleModal(evt) {
+   // Sets modal target to specific secret using id variable
    if (evt.target.id) { id = evt.target.id };
    document.querySelector(`.${id}`).classList.toggle('is-active');
 }
 
 // ----------- Trade Modal Toggle -----------------
-var modalBtn = document.querySelectorAll('.modal-button');
-var modalCloseBtn = document.querySelectorAll('.delete');
-var modalCancel = document.querySelectorAll('.button.cancel');
-var modalSubmit = document.querySelectorAll('.button.edit-submit');
+var tradeModalBtn = document.querySelectorAll('.trade-button');
+var tradeModalCloseBtn = document.querySelectorAll('.delete-trade');
+var tradeModalCancel = document.querySelectorAll('.trade-cancel');
+// var tradeModalSubmit = document.querySelectorAll('.button.edit-submit');
 
-var id;
+if (tradeModalBtn.length) tradeModalBtn.forEach((button) => {
+   button.addEventListener('click', toggleTradeModal)
+});
+if (tradeModalCloseBtn.length) tradeModalCloseBtn.forEach((button) => {
+   button.addEventListener('click', toggleTradeModal)
+});
+if (tradeModalCancel.length) tradeModalCancel.forEach((button) => {
+   button.addEventListener('click', toggleTradeModal)
+});
+// if (tradeModalSubmit.length) tradeModalSubmit.forEach((button) => {
+//    button.addEventListener('click', toggleTradeModal)
+// });
 
-if (modalBtn.length) modalBtn.forEach((button) => {
-   button.addEventListener('click', toggleModal)
-});
-if (modalCloseBtn.length) modalCloseBtn.forEach((button) => {
-   button.addEventListener('click', toggleModal)
-});
-if (modalCancel.length) modalCancel.forEach((button) => {
-   button.addEventListener('click', toggleModal)
-});
-if (modalSubmit.length) modalSubmit.forEach((button) => {
-   button.addEventListener('click', toggleModal)
-});
-
-function toggleModal(evt) {
+function toggleTradeModal(evt) {
    if (evt.target.id) { id = evt.target.id };
    document.querySelector(`.${id}`).classList.toggle('is-active');
 }
