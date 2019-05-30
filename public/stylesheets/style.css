@@ -166,10 +166,34 @@ color: silver;
 
 
 @media screen and (max-width: 769px) {
-#map {
-  width: 80vw;
+  #map {
+    width: 80vw;
+  }
 }
+
+@media screen and (min-width: 980px) {
+  .login-container, a.navbar-link{
+    display: none;
+  }
+  
+  .navbar-dropdown:hover, a.navbar-item:hover {
+    font-weight: bold;
+    background: none;
+  }
+
+.navbar-dropdown, a.navbar-item {
+  background: none;
 }
+
+  #navbarBasicExample {
+    padding: 0;
+    width: 25vw;
+    margin-left: auto;
+    background: transparent;
+    background-image: linear-gradient(to top, rgba(72, 85, 53, 1), rgba(144, 170, 105, .15));
+  }
+}
+
 
 /* -------- radio button tabs --------- */
 
