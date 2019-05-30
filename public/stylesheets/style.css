@@ -129,6 +129,7 @@ a.navbar-item:hover,
   background: rgba(72, 85, 53, 0.685);
   overflow: auto;
   color: silver;
+  width: 40vw;
   margin: 2vw;
   height: 120vh;
   padding: 1vw;
@@ -152,6 +153,18 @@ background: transparent;
 color: silver;
 }
 
+.button.is-text {
+  background-color: transparent;
+  color: silver;
+  border-color: white;
+}
+
+.button.is-text:hover {
+  background-color: silver;
+  color: #4a4a4a;
+  border-color: #4a4a4a;
+}
+
 .navbar-item img {
   margin-right: 8px;
 }
@@ -163,18 +176,27 @@ color: silver;
 }
 
 .modal section {
+  background-color: rgb(60,60,60);
   display: block;
 }
 
+#edit-secret-form textarea,
+#edit-secret-form input,
+.modal-card header,
+.modal-card footer
+{
+  background-color: rgb(220,220,220);
+}
 
 @media screen and (max-width: 769px) {
-  #map {
+  #map, 
+  .radio-tab-container, 
+  #add-secret-form,
+  .modal-card
+  {
     width: 80vw;
   }
 
-  .radio-tab-container {
-    min-width: 80vw;
-  }
 }
 
 @media only screen and (max-width: 1087px) {

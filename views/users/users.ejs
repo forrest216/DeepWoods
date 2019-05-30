@@ -93,7 +93,9 @@
                       <div class="field">
                         <label class="label form-label">Edit Notes</label>
                         <div class="control">
-                          <textarea name="notes" class="textarea" placeholder="What else should someone know about this spot? Be specific, this information will remain secret until you complete a trade." value="<%= secret.notes %>"></textarea>
+                          <textarea name="notes" class="textarea" placeholder="What else should someone know about this spot? Be specific, this information will remain secret until you complete a trade.">
+                            <%= secret.notes %>
+                          </textarea>
                         </div>
                       </div>
                       
