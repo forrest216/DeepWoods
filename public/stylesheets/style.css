@@ -98,8 +98,7 @@ p {
 
 a.navbar-item:hover, 
 .navbar-item.has-dropdown:hover .navbar-link,
-.navbar-link:hover,
-.navbar-dropdown:hover {
+.navbar-link:hover {
   background-image: linear-gradient(to bottom, rgb(72, 85,53), rgb(0, 68,0, 0));
   background-color: transparent;
   color: silver;
@@ -114,7 +113,8 @@ a.navbar-item:hover,
   background: transparent;
 }
 .navbar-dropdown a.navbar-item:hover {
-  background: rgba(144, 170, 105, 0.5);
+  background: transparent;
+  /* background: rgba(144, 170, 105, 0.5); */
   font-weight: bold;
   color: snow;
 }
@@ -171,19 +171,19 @@ color: silver;
   }
 }
 
-@media screen and (min-width: 980px) {
+@media only screen and (max-width: 1087px) {
   .login-container, a.navbar-link{
     display: none;
   }
   
-  .navbar-dropdown:hover, a.navbar-item:hover {
+  .navbar-dropdown:hover, .navbar-item:hover {
     font-weight: bold;
     background: none;
   }
 
-.navbar-dropdown, a.navbar-item {
-  background: none;
-}
+  .navbar-dropdown, a.navbar-item {
+    background: none;
+  }
 
   #navbarBasicExample {
     padding: 0;
