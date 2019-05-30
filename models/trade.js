@@ -9,6 +9,7 @@ var messageSchema = new mongoose.Schema({
 
 var tradeSchema = new mongoose.Schema({
    secret: { type: Schema.Types.ObjectId, ref: 'Secret' },
+   species: String,
    content: String,
    region: String,
    messages: [messageSchema],

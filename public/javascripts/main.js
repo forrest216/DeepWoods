@@ -1,3 +1,6 @@
+/* --------------------This document must not be deferred for the map to load properly------------------ */
+
+
 // Load interactive map into landing page and user view
 var map;
 var userLocale = { lat: 37.7749, lng: -122.431297 };

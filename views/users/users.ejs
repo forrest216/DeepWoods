@@ -40,7 +40,8 @@
                 <p class="users-secret-detail">Terrain: <%= secret.terrain %></p>
                 <p class="users-secret-detail">Notes: <%= secret.notes %></p>
               </div>
-              <a class="button is-light" href="https://www.google.com/maps/search/?api=1&query=<%= secret.lat %>,<%= secret.lng %>" target="_blank">View in Google Maps</a>
+              <a class="button is-light maps-link has-text-link" href="https://www.google.com/maps/search/?api=1&query=<%= secret.lat %>,<%= secret.lng %>" target="_blank">View in Google Maps</a>
+              <button class="button trade-button">Trade</button>
               <button class="button modal-button" id="modal<%= secret._id %>">Edit</button>
             </div>
             <% /*--------------------- 'Edit' modal for each secret ----------------------------*/ %>
@@ -105,6 +106,61 @@
                     <form action="/secrets/<%= secret._id %>?_method=DELETE" method="POST">
                       <button type="submit" class="button is-danger is-right">Delete</button>
                     </form>
+                </footer>
+              </div>
+            </div>
+
+            <% /*--------------------- 'Trade' modal for each secret ----------------------------*/ %>
+            <div class="modal trade-modal<%= secret._id %>">
+              <div class="modal-background"></div>
+              <div class="modal-card">
+                <header class="modal-card-head">
+                  <p class="modal-card-title">Post Your Secret for Trade</p>
+                  <button class="delete-trade" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                  <div class="secret-display-block">
+                    <img class="secret-static-map"  src="https://maps.googleapis.com/maps/api/staticmap?center=<%= secret.lat %>,<%= secret.lng %>&zoom=9&scale=2&size=200x200&maptype=hybrid&key=<%= process.env.MAPS_API %>&markers=size:small%7C<%= secret.lat %>,<%= secret.lng %>" alt="secret <%= secret.species %> location">
+                    <div class="secret-detail-container">
+                      <p class="users-secret-detail">These are the details that will be visible for your trade. Edit below and add a vague but enticing description below but don't post any spoilers!</p>
+                      <p class="users-secret-detail">Species: <%= secret.species %></p>
+                      <p class="users-secret-detail">Region: <%= secret.locale %></p>
+                    </div>
+                  </div>
+                  
+                  <form id="create-trade-form" action="/trades" method="POST">
+                    
+                    <div class="field is-horizontal">
+                      <div class="field-body">
+                        <div class="field">
+                          <div class="control">
+                            <label class="label form-label">Edit Species Info</label>
+                            <input name="species" class="input" type="text" placeholder="Species" value="<%= secret.species %>">
+                          </div>
+                        </div>
+                        <div class="field">
+                          <div class="control has-icons-left">
+                            <label class="label form-label">Edit Region Specificity</label>
+                            <input name="region" class="input" type="text" placeholder="General location(very)" value="<%= secret.locale %>">
+                          </div>
+                        </div>
+                      </div>    
+                    </div>
+                    
+                    <div class="field">
+                      <label class="label form-label">Say something about your trade here. remember, not too specific!</label>
+                      <div class="control">
+                        <textarea name="content" class="textarea" placeholder="What do you want your post to say?">
+                        </textarea>
+                      </div>
+                    </div>
+                    
+                    <button type="submit" class="button is-success edit-submit">Submit for Trade</button>
+                  </form>
+                </section>
+                <footer class="modal-card-foot">
+                  <button class="button trade-cancel" >Cancel</button>
+                  <% /*----------^^^^^^^^^^^^^^^^^^^^^ Editing this section ^^^^^^^^^^^^^^^^^^^^^------------*/ %>
                 </footer>
               </div>
             </div>
