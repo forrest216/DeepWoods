@@ -6,7 +6,6 @@ var messageSchema = new Schema({
    user: String
 }) 
 
-
 var tradeSchema = new Schema({
    secret: { type: Schema.Types.ObjectId, ref: 'Secret' },
    species: String,
