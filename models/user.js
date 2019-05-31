@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var reviewSchema = new mongoose.Schema({
+var reviewSchema = new Schema({
    by: String, // this is a googleId
    content: String,
    rating: Number,
@@ -10,13 +10,12 @@ var reviewSchema = new mongoose.Schema({
    timestamps: true
 });
 
-var userSchema = new mongoose.Schema({
+var userSchema = new Schema({
    userName: String,
    email: String,
    googleId: String,
    avatar: String,
    userRating: Number,
-   secrets: [{ type: Schema.Types.ObjectId, ref: 'Secret' }],
    region: String,
    reviewsAbout: [reviewSchema],
    reviewsBy: [reviewSchema],

@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var messageSchema = new mongoose.Schema({
+var messageSchema = new Schema({
    content: {type: String, required: true},
    user: String
 }) 
 
 
-var tradeSchema = new mongoose.Schema({
+var tradeSchema = new Schema({
    secret: { type: Schema.Types.ObjectId, ref: 'Secret' },
    species: String,
    content: String,

@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var secretSchema = new mongoose.Schema({
+
+var secretSchema = new Schema({
    recipient: String,
    creator: String,
    lat: {type: Number, required: true}, 

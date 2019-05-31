@@ -58,6 +58,9 @@
     
         <div class="navbar-end">
           <div class="navbar-item login-container">
+            <% if(user && user.avatar) { %>
+            <img src="<%= user.avatar %>" alt="user-avatar">
+            <% } %>
             <div class="buttons">
               <% if(user) { %>
               <a href="/logout" class="button is-primary"><strong>Log out</strong></a>
