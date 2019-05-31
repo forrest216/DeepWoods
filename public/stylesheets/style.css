@@ -100,22 +100,21 @@ a.navbar-item:hover,
   background-image: linear-gradient(to top, rgba(72, 85, 53, .9), rgba(144, 170, 105, .1));
   border: none;
 }
+
+.navbar-item, .navbar-link,
 .navbar-dropdown a.navbar-item {
   background: transparent;
+  color: silver;
 }
 .navbar-dropdown a.navbar-item:hover {
   background: transparent;
-  /* background: rgba(144, 170, 105, 0.5); */
   font-weight: bold;
   color: snow;
 }
 
-.navbar-item, .navbar-link {
-  background-color: transparent;
-  color: silver;
-}
-
 .trade-container-main, .radio-tab-container {
+  border-top: .75rem solid rgba(27, 27, 27);
+  border-bottom: .75rem solid rgba(27, 27, 27);
   background: rgba(72, 85, 53, 0.685);
   overflow: auto;
   color: silver;
