@@ -115,7 +115,7 @@ a.navbar-item:hover,
   color: silver;
 }
 
-.trade-container-main, .radio-tab-container{
+.trade-container-main, .radio-tab-container {
   background: rgba(72, 85, 53, 0.685);
   overflow: auto;
   color: silver;
@@ -130,7 +130,8 @@ a.navbar-item:hover,
   background: rgb(10, 10, 10, .6);
 }
 
-.secret-static-map {
+.secret-static-map,
+.login-index-body {
   margin-top: 15px;
 }
 
