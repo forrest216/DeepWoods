@@ -179,14 +179,13 @@
                     <p class="trade-detail">Region: <%= trade.region %></p>
                     <p class="trade-detail">Trade details: <%= trade.content %></p>
                   </div>
-                  <% }); } else { %>
-                    <div class="secret-display-block">
-                      <p> Your trades will appear here, but you have to add at least one first!</p>
-                    </div>
-                    <% }; %>
-                  </section>
-                  <% /*----------^^^^^^^^^^^^^^^^^^^^^ Editing this section ^^^^^^^^^^^^^^^^^^^^^------------*/ %>
-        
+                <% }); } else { %>
+                  <div class="secret-display-block">
+                    <p> Your trades will appear here, but you have to add at least one first!</p>
+                  </div>
+              <% }; %>
+            </section>
+                  
         <section id="tab-content-3" class="radio-tab-container">
             <% if(trades.length) { %>
               <% trades.forEach((trade) => { %>
@@ -265,10 +264,3 @@
 </div>
 
 <%- include('../partials/footer') %>
-
-
-
-<%  /* -- Mushroom foragers are well known for keeping their spots 
-              a secret - after all, one doesn't hike through the woods for days on end staring at duff 
-              only to spill their secrets to the first noob who asks where to find the choice boletes. 
-              Now you can expand your range while keeping your secret within the community. Happy hunting! -- */ %>

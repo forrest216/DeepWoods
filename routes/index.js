@@ -19,6 +19,10 @@ router.get('/oauth2callback', passport.authenticate(
 
 router.get('/', usersController.index);
 
+router.get('/references', (req, res)=> {
+  res.render('references', {user: req.user});
+});
+
 router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');

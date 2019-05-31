@@ -8,7 +8,6 @@ module.exports = {
 }
 
 function index(req, res, next) {
-   // get all trades involving the user
    Trade.find({}, (err, trades) => {
       if (err) return next(err);
       res.render('index', {

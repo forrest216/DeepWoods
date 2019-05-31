@@ -27,34 +27,11 @@ p {
   border: 1px solid silver;
 }
 
-#left-home-column {
-  margin: 2vw;
-  padding: 2vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#right-home-column {
-  margin: 2vw;
-  padding: 2vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#left-users-column {
-  margin: 2vw;
-  padding: 2vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#right-users-column {
+#left-home-column,
+#right-home-column,
+#left-users-column,
+#right-users-column,
+.links-container {
   margin: 2vw;
   padding: 2vh;
   text-align: center;
@@ -78,6 +55,10 @@ p {
   margin: 2vw;
   height: 80vh;
   width: 40vw;
+}
+
+#map.map-main {
+  margin-top: 0;
 }
 
 .button.is-primary {
@@ -150,6 +131,11 @@ a.navbar-item:hover,
   padding: 1vw;
 }
 
+.ref-link {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 .button.modal-button {
 background: transparent;
 color: silver;
@@ -194,7 +180,8 @@ color: silver;
   #map, 
   .radio-tab-container, 
   #add-secret-form,
-  .modal-card
+  .modal-card,
+  .trade-container-main
   {
     width: 80vw;
   }
@@ -253,10 +240,6 @@ label {
   text-align: center;
   color: #abc;
   border: 1px solid transparent;
-}
-
-.svg-inline--fa {
-  margin-right: 1vw;
 }
 
 label:before {

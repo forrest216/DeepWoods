@@ -10,8 +10,11 @@
             </h1>
             <p>Where foragers can trade their hard-won knowledge with other hunters. Make a secret, trade it for someone else's, 
               and then get out to the woods!</p>
+              <% if(!user) { %>
+                <a href="/auth" class="button is-medium">Login with Google to Start</a>
+                <% } %>
           </div>
-          <div id="map"></div>
+          <div id="map" class="map-main"></div>
         </div>
       </div>
       <div class="column is-half">
