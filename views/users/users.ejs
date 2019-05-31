@@ -44,6 +44,7 @@
               <button class="button trade-button" id="trade-modal<%= secret._id %>">Trade</button>
               <button class="button edit-button" id="modal<%= secret._id %>">Edit</button>
             </div>
+
             <% /*--------------------- 'Edit' modal for each secret ----------------------------*/ %>
             <div class="modal modal<%= secret._id %>">
               <div class="modal-background"></div>
@@ -212,8 +213,8 @@
 
       <form id="add-secret-form" action="/secrets" method="POST">
         
-        <input id="lat-input" type="hidden" name="lat">
-        <input id="lng-input" type="hidden" name="lng">
+        <input id="lat-input" type="hidden" name="lat" required>
+        <input id="lng-input" type="hidden" name="lng" required>
         <input type="hidden" name="status" value="fresh">
         <input type="hidden" name="creator" value="<%= user.googleId %>">
 
@@ -221,12 +222,12 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <input name="species" class="input" type="text" placeholder="Species">
+                <input name="species" class="input" type="text" placeholder="Species" required>
               </div>
             </div>
             <div class="field">
               <div class="control has-icons-left">
-                <input name="locale" class="input" type="text" placeholder="General location(very)">
+                <input name="locale" class="input" type="text" placeholder="General location(very)" required>
                 <span class="icon is-small is-left">
                   <i class="far fa-compass"></i>
                 </span>
@@ -237,13 +238,13 @@
 
         <div class="field">
           <label class="label form-label">Terrain</label>
-            <input name="terrain" class="input" type="text" placeholder="Say something about the terrain">
+            <input name="terrain" class="input" type="text" placeholder="Say something about the terrain" required>
         </div>
         
         <div class="field">
           <label class="label form-label">Notes</label>
           <div class="control">
-            <textarea name="notes" class="textarea" placeholder="What else should someone know about this spot? Be specific, this information will remain secret until you complete a trade."></textarea>
+            <textarea name="notes" class="textarea" placeholder="What else should someone know about this spot? Be specific, this information will remain secret until you complete a trade." required></textarea>
           </div>
         </div>
         
