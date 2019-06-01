@@ -27,6 +27,7 @@
               <% if(trades.length) { %>
                 <% trades.forEach((trade) => { %>
                   <div class="trade-block">
+                    <p class="trade-detail">Species: <%= trade.species %></p>
                     <p class="trade-detail">Region: <%= trade.region %></p>
                     <p class="trade-detail">Trade details: <%= trade.content %></p>
                   </div>

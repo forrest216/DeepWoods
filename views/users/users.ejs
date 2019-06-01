@@ -7,6 +7,7 @@
 
       <div class="messages-container-main">
 
+        <% /*--------------------- Radio Tabs ----------------------------*/ %>
         <input  id="tab1" type="radio" name="tabs" checked>
         <label class="radio-tab" for="tab1">
           <span class="icon is-small is-left">
@@ -177,6 +178,7 @@
               <% if(trades.length) { %>
                 <% trades.forEach((trade) => { %>
                   <div class="trade-block">
+                    <p class="trade-detail">Species: <%= trade.species %></p>
                     <p class="trade-detail">Region: <%= trade.region %></p>
                     <p class="trade-detail">Trade details: <%= trade.content %></p>
                   </div>
@@ -204,7 +206,7 @@
 
   <div class="column is-half">
     <div id="right-users-column">
-
+        <% /*--------------------- Map Section ----------------------------*/ %>
       <div id="map"></div>
 
       <div class="text-area">

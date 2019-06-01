@@ -15,9 +15,9 @@ Welcome! This second offering from Forrest Smith is an app for logging and tradi
 
 This project has been a long time coming, as foraging is one of my favorite ways to get out to the woods. Coming to the Bay Area, I found precious few spots and had nobody to share with. DeepWoods could be the community that solves that for people like me. Let's fill those baskets!
 
-Deployed using Express/Node.js, MongoDB, Javascript and HTML/CSS with a little help from: [Bulma](https://www.bulma.io)
+Deployed using Express/Node.js, MongoDB, Javascript and HTML/CSS with a little help from: [Bulma](https://bulma.io)
 
-## [Launch DeepWoods](https://deepwoods.herokuapp.com)
+## [Launch DeepWoods](https://deepwoods.herokuapp.com) on [Heroku](https://heroku.com)
 
 ### Planned improvements:
 * Flesh out trade system
@@ -26,6 +26,12 @@ Deployed using Express/Node.js, MongoDB, Javascript and HTML/CSS with a little h
 
 On Github: [HERE](https://github.com/forrest216/deepwoods)
 
+Planning materials: [Trello](https://trello.com/b/MZnGURHV/sei-project-2-deepwoods)
+
+
+### ERD on Lucidchart:
+
+<div style="width: 480px; height: 360px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:480px; height:360px" src="https://www.lucidchart.com/documents/embeddedchart/73365803-fb86-4725-87ee-b27203b7f0ab" id="1I3lKiHKue7G"></iframe></div>
 
 Background image modified from:
 https://www.pexels.com/photo/forest-hiking-trees-15286/
