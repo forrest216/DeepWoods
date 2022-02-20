@@ -1,5 +1,5 @@
 # [DeepWoods](https://deepwoods.herokuapp.com/)
-Welcome! This second offering from Forrest Smith is an app for logging and trading your secret mushroom spots with other mushroom(or whatever!) foragers. As always, be careful, bring water, and if you don't find anything don't be sad - you went for a nice hike!
+Welcome! This is an app for logging and trading your secret mushroom spots with other mushroom(or whatever!) foragers. As always, be careful, bring water, and if you don't find anything don't be sad - you went for a nice hike!
 
 ### Browse trades anonymously, or Log in to view your dashboard:
 ![Link](https://i.imgur.com/ggODoR0b.jpg)
